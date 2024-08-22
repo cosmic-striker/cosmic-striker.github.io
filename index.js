@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { title: 'Cosmic Striker' });
 });
 
 app.post('/contact', (req, res) => {
