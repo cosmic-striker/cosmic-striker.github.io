@@ -4,7 +4,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     alert('Thank you for your message!');
     this.reset();
 });
-<<<<<<< HEAD:public/scripts.js
 
 // Toggle the navigation menu visibility
 document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -26,5 +25,3 @@ themeToggle.addEventListener('click', function() {
         themeToggle.textContent = '🌞'; // Light mode icon
     }
 });
-=======
->>>>>>> parent of f68dcca (dark/light theme):scripts.js
