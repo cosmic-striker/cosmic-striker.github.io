@@ -7,7 +7,6 @@
     <title>Cosmic-Striker Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
@@ -44,23 +43,69 @@
         <section id="projects">
             <h2>Projects</h2>
 
-            <div class="project" data-hover="true">
-                <h3>Vulnerability Scanner</h3>
-                <p>Developed a tool to scan and identify vulnerabilities in web applications.</p>
+            <!-- Project Card 1 -->
+            <div class="event-card" oncontextmenu="copyToClipboard(); notify('Event link copied to clipboard!', 5000); return false;" onclick="openEvent(1);">
+                <img class="event-img" src="https://i.pinimg.com/736x/7a/5a/ea/7a5aeacff36e6452b3f2a9a1046f2081.jpg" alt="Vulnerability Scanner" loading="lazy">
+                <div class="event-content">
+                    <div class="event-title">Vulnerability Scanner</div>
+                    <div class="event-tag">Scan and Identify Vulnerabilities</div>
+                    <div class="event-desc">
+                        Developed a tool to scan and identify vulnerabilities in web applications.
+                    </div>
+                </div>
+                <div class="event-footer">
+                    <div class="event-meta">
+                        <span class="event-type">Web Tool</span>
+                        <div class="event-line"></div>
+                        <span class="event-date">2023</span>
+                    </div>
+                    <div class="event-button">View</div>
+                </div>
             </div>
 
-            <div class="project" data-hover="true">
-                <h3>Malware Analysis Framework</h3>
-                <p>Created a framework for analyzing and classifying different types of malware.</p>
+            <!-- Project Card 2 -->
+            <div class="event-card" oncontextmenu="copyToClipboard(); notify('Event link copied to clipboard!', 5000); return false;" onclick="openEvent(2);">
+                <img class="event-img" src="https://i.pinimg.com/736x/7a/5a/ea/7a5aeacff36e6452b3f2a9a1046f2081.jpg" alt="Malware Analysis Framework" loading="lazy">
+                <div class="event-content">
+                    <div class="event-title">Malware Analysis </div>
+                    <div class="event-tag">Analyze and Classify Malware</div>
+                    <div class="event-desc">
+                        Created a framework for analyzing and classifying different types of malware.
+                    </div>
+                </div>
+                <div class="event-footer">
+                    <div class="event-meta">
+                        <span class="event-type">Security Tool</span>
+                        <div class="event-line"></div>
+                        <span class="event-date">2023</span>
+                    </div>
+                    <div class="event-button">View</div>
+                </div>
             </div>
 
-            <div class="project" data-hover="true" onclick="window.location.href='https://github.com/cosmic-striker/kIvI'">
-                <h3>test run </h3>
-                <p>Created a framework for analyzing and classifying different types of malware.</p>
+            <!-- Project Card 3 -->
+            <div class="event-card" oncontextmenu="copyToClipboard(); notify('Event link copied to clipboard!', 5000); return false;" onclick="openEvent(3);">
+                <img class="event-img" src="https://i.pinimg.com/736x/7a/5a/ea/7a5aeacff36e6452b3f2a9a1046f2081.jpg" alt="Test Run" loading="lazy">
+                <div class="event-content">
+                    <div class="event-title">Test Run</div>
+                    <div class="event-tag">Test and Validate</div>
+                    <div class="event-desc">
+                        A framework for testing and validating various cybersecurity tools.
+                    </div>
+                </div>
+                <div class="event-footer">
+                    <div class="event-meta">
+                        <span class="event-type">Testing Tool</span>
+                        <div class="event-line"></div>
+                        <span class="event-date">2023</span>
+                    </div>
+                    <div class="event-button">View</div>
+                </div>
             </div>
+
+            
 
         </section>
-
     </main>
 
     <script src="script.js"></script>
@@ -69,20 +114,16 @@
         <p>&copy; 2024 Cosmic-Striker. All rights reserved.</p>
 
         <div class="icons">
-
             <a href="https://mail.google.com" target="_blank" aria-label="Gmail">
                 <i class="fab fa-google"></i>
             </a>
-            <a href="https://github.com/cosmic-striker" target="_blank" aria-label="github">
+            <a href="https://github.com/cosmic-striker" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/vishal-d-124762290" target="_blank" aria-label="linkedin">
+            <a href="https://www.linkedin.com/in/vishal-d-124762290" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-
         </div>
-        
     </footer>
-    
 </body>
 </html>

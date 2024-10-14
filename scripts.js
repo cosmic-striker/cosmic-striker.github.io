@@ -1,17 +1,26 @@
-// Smooth Scrolling
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+function copyToClipboard() {
+    const textToCopy = "Your link or text here"; // Replace with actual text
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            console.log('Text copied to clipboard');
+        })
+        .catch(err => {
+            console.error('Could not copy text: ', err);
         });
-    });
-});
-document.querySelectorAll('.project').forEach(card => {
-    card.addEventListener('mouseover', () => {
-        card.style.backgroundColor = '#2e2e2e';
-    });
-    card.addEventListener('mouseout', () => {
-        card.style.backgroundColor = '#1e1e1e';
-    });
-});
+}
+
+function notify(message, duration) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerText = message;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, duration);
+}
+
+function openEvent(eventNumber) {
+    // Logic to open event details, e.g., in a modal or new page
+    alert(`Opening event ${eventNumber}`);
+}
