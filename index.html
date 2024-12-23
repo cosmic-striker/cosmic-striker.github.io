@@ -1,135 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishal's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header>
-        <nav>
-            <h1>Vishal</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#footer">Footer</a></li>
-            </ul>
-        </nav>
+        <div class="navbar">
+            <h1>Vishal's Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="about">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Vishal's Portfolio</h2>
+                <p>A passionate cybersecurity student and developer exploring innovation.</p>
+                <div class="btn-container">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="#projects" class="btn btn-secondary">Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
             <h2>About Me</h2>
-            
-            <p>Welcome to my portfolio! I’m Vishal, an enthusiastic Cybersecurity undergraduate at the Chennai Institute of Technology. I have a passion for solving tough problems and transforming them into innovative solutions.</p>
-            <p>I have hands-on experience with Python and a solid foundation in networking, complemented by proficiency in C++ and Java. This diverse skill set enables me to tackle a wide array of cybersecurity challenges. Each project I engage in is a valuable learning experience, both technically and personally.</p>
-            <p>My collaboration skills have been strengthened through leading impactful projects and organizing national-level tech events, preparing me to excel in high-pressure situations and deliver exceptional results.</p>
-            <p>I’m excited to connect with like-minded individuals who share a passion for creativity and problem-solving in cybersecurity. Together, let’s make significant strides in securing our digital future!</p>
-        
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Network Security</li>
-                <li>Penetration Testing</li>
-                <li>Malware Analysis</li>
-                <li>Python programming</li>
-                <li>C,C++ programming</li>
-                <li>Visual Studio, Linux, VM’s</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-
-            <!-- Project Card 1 -->
-            <div class="event-card" oncontextmenu="copyToClipboard(); notify('Event link copied to clipboard!', 5000); return false;" onclick="openEvent(1);">
-                <img class="event-img" src="https://i.pinimg.com/736x/7a/5a/ea/7a5aeacff36e6452b3f2a9a1046f2081.jpg" alt="Vulnerability Scanner" loading="lazy">
-                <div class="event-content">
-                    <div class="event-title">Vulnerability Scanner</div>
-                    <div class="event-tag">Scan and Identify Vulnerabilities</div>
-                    <div class="event-desc">
-                        Developed a tool to scan and identify vulnerabilities in web applications.
-                    </div>
+            <div class="about-content">
+                <div class="card">
+                    <h3>Skills</h3>
+                    <p>Cybersecurity, Network Scanning, Python, Flask, and more.</p>
                 </div>
-                <div class="event-footer">
-                    <div class="event-meta">
-                        <span class="event-type">Security Tool</span>
-                        <div class="event-line"></div>
-                        <span class="event-date">2023</span>
-                    </div>
-                    <a href="https://github.com/cosmic-striker/vulnerability-scanner" class="event-button" target="_blank" rel="noopener noreferrer">View</a>
+                <div class="card">
+                    <h3>Experience</h3>
+                    <p>Currently pursuing B.E. in Cyber Security with hands-on projects.</p>
+                </div>
+                <div class="card">
+                    <h3>Interests</h3>
+                    <p>Developing secure applications and exploring advanced technologies.</p>
                 </div>
             </div>
-            
-
-            <!-- Project Card 2 -->
-            <div class="event-card" oncontextmenu="copyToClipboard(); notify('Event link copied to clipboard!', 5000); return false;" onclick="openEvent(2);">
-                <img class="event-img" src="https://i.pinimg.com/736x/7a/5a/ea/7a5aeacff36e6452b3f2a9a1046f2081.jpg" alt="Malware Analysis Framework" loading="lazy">
-                <div class="event-content">
-                    <div class="event-title">Password-Manager</div>
-                    <div class="event-tag">RSA, AES, ChaCha20, bcrypt, and Argon2</div>
-                    <div class="event-desc">
-                        integrity and authentication through bcrypt and Argon2 hashing
-                    </div>
-                </div>
-                <div class="event-footer">
-                    <div class="event-meta">
-                        <span class="event-type">Cryptography</span>
-                        <div class="event-line"></div>
-                        <span class="event-date">2023</span>
-                    </div>
-                    <a href="https://github.com/cosmic-striker/password-encryption-manager" class="event-button" target="_blank" rel="noopener noreferrer">View</a>
-                </div>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="event-card" oncontextmenu="copyToClipboard(); notify('Event link copied to clipboard!', 5000); return false;" onclick="openEvent(3);">
-                <img class="event-img" src="https://i.pinimg.com/736x/7a/5a/ea/7a5aeacff36e6452b3f2a9a1046f2081.jpg" alt="Maze-Solving-Algorithm" loading="lazy">
-                <div class="event-content">
-                    <div class="event-title">Maze Algorithm</div>
-                    <div class="event-tag">create and solve maze using Algorithm</div>
-                    <div class="event-desc">
-                        interactive maze generation and solving tool using Python and Pygame.
-                    </div>
-                </div>
-                <div class="event-footer">
-                    <div class="event-meta">
-                        <span class="event-type">visualization</span>
-                        <div class="event-line"></div>
-                        <span class="event-date">2023</span>
-                    </div>
-                    <a href="https://github.com/cosmic-striker/maze-game" class="event-button" target="_blank" rel="noopener noreferrer">View</a>
-                </div>
-            </div>
-
-            
-
         </section>
     </main>
 
-    <script src="script.js"></script>
-
-    <footer id="footer">
-        <p>&copy; 2024 Cosmic-Striker. All rights reserved.</p>
-
-        <div class="icons">
-            <a href="https://mail.google.com" target="_blank" aria-label="Gmail">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="https://github.com/cosmic-striker" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/vishal-d-124762290" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
+    <footer>
+        <p>© 2024 Vishal's Portfolio. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
