@@ -3,90 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishal - Projects</title>
+    <title>Vishal - Projects Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="cyber-lines"></div>
-    <div class="background-overlay"></div>
-    <div class="animated-bg"></div>
-    
-    <header>
-        <nav>
-            <div class="logo">V</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="skills.html">Skills</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
+<body class="projects-page">
+    <!-- Floating Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-    <main>
-        <section id="projects">
-            <div class="section-header">
-                <h2>All Projects</h2>
-                <div class="section-line"></div>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+    </a>
+
+    <!-- Main Container -->
+    <div class="projects-container">
+        <!-- Page Header -->
+        <header class="projects-header">
+            <div class="header-content">
+                <h1 class="projects-title">MY PROJECTS</h1>
+                <p class="projects-subtitle">A collection of my cybersecurity & development work</p>
             </div>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>NOVA Scraper</h3>
-                    <p>Advanced OSINT tool with Flask-based frontend for intelligence gathering</p>
-                    <div class="project-tech">Python • Flask • OSINT</div>
+        </header>
+
+        <!-- Projects Grid with Card Boxes -->
+        <section class="projects-section">
+            <!-- Cybersecurity Projects Box -->
+            <div class="project-box">
+                <div class="box-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h2>Cybersecurity Projects</h2>
+                    <div class="box-line"></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-brain"></i></div>
-                    <h3>KIVI-2.0</h3>
-                    <p>Custom LLM with CUDA optimization for enhanced performance</p>
-                    <div class="project-tech">Python • CUDA • AI</div>
+                <div class="cards-grid">
+                <div class="cards-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card">
+                        <div class="card-badge">osint</div>
+                        <div class="card-visual">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>NOVA</h3>
+                            <p>Advanced OSINT tool with Flask-based frontend for intelligence gathering and data analysis</p>
+                            <div class="card-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">OSINT</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card">
+                        <div class="card-badge">security</div>
+                        <div class="card-visual">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Flames</h3>
+                            <p>Real-time network traffic monitoring & intrusion detection system with advanced analytics</p>
+                            <div class="card-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Network</span>
+                                <span class="tag">IDS</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card">
+                        <div class="card-badge">ctf</div>
+                        <div class="card-visual">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Gate</h3>
+                            <p>Interactive CTF game platform with real-world security challenges and scoring system</p>
+                            <div class="card-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Security</span>
+                                <span class="tag">CTF</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card">
+                        <div class="card-badge">sentinel</div>
+                        <div class="card-visual">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Cyber</h3>
+                            <p>AI-powered intrusion detection and prevention system using machine learning</p>
+                            <div class="card-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">Security</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Fairy Flames</h3>
-                    <p>Real-time network traffic monitoring & intrusion detection system</p>
-                    <div class="project-tech">C++ • Network Security</div>
+            </div>
+
+            <!-- AI & Development Projects Box -->
+            <div class="project-box">
+                <div class="box-header">
+                    <i class="fas fa-brain"></i>
+                    <h2>AI & Development Projects</h2>
+                    <div class="box-line"></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-                    <h3>The Gate of Trials</h3>
-                    <p>Interactive CTF game with real-world security challenges</p>
-                    <div class="project-tech">JavaScript • Security</div>
+                <div class="cards-grid">
+                    <!-- Project Card 5 -->
+                    <div class="project-card">
+                        <div class="card-badge">kivi</div>
+                        <div class="card-visual">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>KIVI</h3>
+                            <p>Custom Large Language Model with CUDA optimization for enhanced performance and efficiency</p>
+                            <div class="card-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">CUDA</span>
+                                <span class="tag">AI</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="project-card">
+                        <div class="card-badge">void</div>
+                        <div class="card-visual">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Void</h3>
+                            <p>Search engine optimized for deep web & cybersecurity research with advanced indexing</p>
+                            <div class="card-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">ElasticSearch</span>
+                                <span class="tag">Scraping</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 7 -->
+                    <div class="project-card">
+                        <div class="card-badge">cos</div>
+                        <div class="card-visual">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>.cos</h3>
+                            <p>Custom functional programming language with JIT compilation and LLVM backend</p>
+                            <div class="card-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">LLVM</span>
+                                <span class="tag">Compiler</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-search"></i></div>
-                    <h3>Void Engine</h3>
-                    <p>Search engine optimized for deep web & cybersecurity research</p>
-                    <div class="project-tech">Python • ElasticSearch • Web Scraping</div>
+            </div>
+
+            <!-- IoT & Cloud Projects Box -->
+            <div class="project-box">
+                <div class="box-header">
+                    <i class="fas fa-cloud"></i>
+                    <h2>IoT & Cloud Projects</h2>
+                    <div class="box-line"></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-water"></i></div>
-                    <h3>AquaGuard</h3>
-                    <p>IoT-based water quality monitoring system with real-time analytics</p>
-                    <div class="project-tech">IoT • Python • Cloud</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-code"></i></div>
-                    <h3>.cos Language</h3>
-                    <p>Custom functional programming language with JIT compilation</p>
-                    <div class="project-tech">C++ • LLVM • Compiler Design</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-robot"></i></div>
-                    <h3>CyberSentinel</h3>
-                    <p>AI-powered intrusion detection and prevention system</p>
-                    <div class="project-tech">Python • TensorFlow • Security</div>
+                <div class="cards-grid">
+                    <!-- Project Card 8 -->
+                    <div class="project-card">
+                        <div class="card-badge">aqua</div>
+                        <div class="card-visual">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Aqua</h3>
+                            <p>IoT-based water quality monitoring system with real-time analytics and cloud dashboard</p>
+                            <div class="card-tags">
+                                <span class="tag">IoT</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Cloud</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Vishal - Cybersecurity Portfolio</p>
-    </footer>
-
-    <script src="projects.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

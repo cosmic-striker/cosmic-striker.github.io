@@ -115,4 +115,53 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = 'all 0.6s ease-out';
         observer.observe(section);
     });
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+    });
+
+    // Typing effect for subtitle
+    const subtitle = document.querySelector('.subtitle');
+    const originalSubtitle = subtitle.textContent;
+    subtitle.textContent = '';
+    let i = 0;
+    const typeWriter = () => {
+        if (i < originalSubtitle.length) {
+            subtitle.textContent += originalSubtitle.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    };
+    setTimeout(typeWriter, 1000); // Start after 1 second
+
+    // Contact form
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+    }
+
+    // Back to top
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
