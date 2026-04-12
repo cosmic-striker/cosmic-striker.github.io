@@ -3,153 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishal - Creative Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Minimal portfolio for Vishal, a cybersecurity and systems-focused student.">
+    <title>Vishal | Portfolio</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0b0d10;
+            --panel: #11151b;
+            --panel-alt: #0f1318;
+            --text: #e7ebf0;
+            --muted: #a8b0bb;
+            --line: #232a33;
+            --accent: #cdd6e0;
+            --chip: #161b22;
+            --max-width: 1040px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.03), transparent 35%),
+                linear-gradient(180deg, #0b0d10 0%, #090b0e 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            width: min(100% - 32px, var(--max-width));
+            margin: 0 auto;
+            padding: 32px 0 56px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(11, 13, 16, 0.78);
+            border-bottom: 1px solid rgba(35, 42, 51, 0.72);
+        }
+
+        .nav {
+            width: min(100% - 32px, var(--max-width));
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 0;
+        }
+
+        .brand {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--text);
+        }
+
+        section {
+            padding: 72px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        section:last-of-type {
+            border-bottom: 0;
+        }
+
+        .hero {
+            min-height: calc(100vh - 88px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .eyebrow {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 0.75rem;
+            margin-bottom: 18px;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.8rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+            color: var(--accent);
+            max-width: 760px;
+            margin-bottom: 18px;
+        }
+
+        .intro,
+        .section-copy,
+        .project-text,
+        .contact-list {
+            color: var(--muted);
+            font-size: 1.02rem;
+            max-width: 760px;
+        }
+
+        .note {
+            margin-top: 28px;
+            padding-left: 16px;
+            border-left: 2px solid #2f3945;
+            color: var(--text);
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+            font-size: 0.98rem;
+        }
+
+        .section-header {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            letter-spacing: -0.03em;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent), var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.12rem;
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0 14px;
+        }
+
+        .chip {
+            padding: 6px 10px;
+            border: 1px solid var(--line);
+            background: var(--chip);
+            border-radius: 999px;
+            color: var(--accent);
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+            font-size: 0.82rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 12px 14px;
+            background: var(--panel-alt);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--text);
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-list a {
+            width: fit-content;
+            border-bottom: 1px solid rgba(205, 214, 224, 0.35);
+        }
+
+        .contact-list a:hover,
+        .contact-list a:focus-visible {
+            border-bottom-color: var(--accent);
+        }
+
+        .view-more {
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .view-more-link {
+            color: var(--accent);
+            font-size: 1.02rem;
+            border-bottom: 1px solid rgba(205, 214, 224, 0.35);
+            transition: border-color 0.2s ease;
+        }
+
+        .view-more-link:hover,
+        .view-more-link:focus-visible {
+            border-bottom-color: var(--accent);
+        }
+
+        footer {
+            padding-top: 28px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 760px) {
+            section {
+                padding: 56px 0;
+            }
+
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: 32px;
+                gap: 28px;
+            }
+
+            .hero-image {
+                aspect-ratio: 1.2;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Floating Particles Background -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Hero Section with Artistic Layout -->
-        <section class="hero-section">
-            <!-- About Me Tag -->
-            <div class="about-tag">
-                <svg class="flame-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2C12 2 8 6 8 10C8 12.21 9.79 14 12 14C14.21 14 16 12.21 16 10C16 6 12 2 12 2Z"/>
-                    <path d="M12 14C12 14 10 16 10 18C10 19.1 10.9 20 12 20C13.1 20 14 19.1 14 18C14 16 12 14 12 14Z"/>
-                </svg>
-                <span class="signature">About ME</span>
-                <div class="underline"></div>
+    <header>
+        <nav class="nav" aria-label="Primary">
+            <div class="brand">Vishal</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
+        </nav>
+    </header>
 
-            <!-- Main Content Grid -->
-            <div class="content-grid">
-                <!-- Left: Polaroid Photo -->
-                <div class="polaroid-section">
-                    <div class="decorative-circle"></div>
-                    <div class="polaroid">
-                        <div class="photo-frame">
-                            <img src="vishal.png" alt="Vishal" class="profile-photo">
-                        </div>
-                        <div class="polaroid-caption">
-                            <span class="age-badge">21 YEARS</span>
-                            <span class="location">NATIONALITY<br>IN-IND</span>
-                        </div>
-                    </div>
-                    <div class="designer-badge rotating">
-                        <svg viewBox="0 0 100 100" class="circular-text">
-                            <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
-                            <text>
-                                <textPath href="#circle">
-                                    CYBERSECURITY • ETHICAL HACKER • 
-                                </textPath>
-                            </text>
-                        </svg>
-                        <div class="artist-icon">@</div>
-                    </div>
-                    <svg class="arrow-doodle" viewBox="0 0 200 100" fill="none">
-                        <path d="M10 50 Q60 10, 120 50 T190 50" stroke="#FF1744" stroke-width="3" fill="none"/>
-                        <path d="M180 40 L190 50 L180 60" stroke="#FF1744" stroke-width="3" fill="none"/>
-                    </svg>
-                </div>
-
-                <!-- Right: Info Content -->
-                <div class="info-section">
-                    <div class="greeting">
-                        <h1 class="big-title">HI!!</h1>
-                        <svg class="star-doodle star-1" viewBox="0 0 50 50">
-                            <path d="M25 5 L28 20 L40 15 L30 25 L45 30 L28 32 L30 45 L25 30 L20 45 L22 32 L5 30 L20 25 L10 15 L22 20 Z" fill="#FF1744"/>
-                        </svg>
-                        <svg class="star-doodle star-2" viewBox="0 0 50 50">
-                            <path d="M25 5 L28 20 L40 15 L30 25 L45 30 L28 32 L30 45 L25 30 L20 45 L22 32 L5 30 L20 25 L10 15 L22 20 Z" fill="#00E5FF"/>
-                        </svg>
-                    </div>
-
-                    <div class="intro-text">
-                        <p class="name-intro">My name is <strong>Vishal</strong>. I'm a <span class="highlight">Cybersecurity</span> / <span class="highlight">Ethical Hacker</span> / <span class="highlight">AI Developer</span> based in India.</p>
-                    </div>
-
-                    <div class="interest-section">
-                        <h3 class="section-title">
-                            <span class="emoji">🛡️</span> SINCE ALWAYS
-                        </h3>
-                        <p>I remember, I've always had a special interest in cyber defense, from the most basic network security to the most elaborated penetration testing.</p>
-                    </div>
-
-                    <div class="interest-section">
-                        <h3 class="section-title">
-                            <span class="emoji">✈️</span> I LIVE TO
-                        </h3>
-                        <p>discover and experience new security challenges, explore cutting-edge cyber tech, and express myself through code for CTFs and others.</p>
-                    </div>
-
-                    <svg class="arrow-connector" viewBox="0 0 300 150" fill="none">
-                        <path d="M10 10 Q150 80, 290 10" stroke="#FF1744" stroke-width="4" fill="none" stroke-dasharray="10 5"/>
-                    </svg>
-                </div>
+    <main class="page">
+        <section class="hero" id="top">
+            <div>
+                <div class="eyebrow">Cybersecurity and systems student</div>
+                <h1>Vishal</h1>
+                <p class="tagline">I build, break, and understand systems.</p>
+                <p class="intro">A hands-on learner focused on cybersecurity, networking, and real-world systems.</p>
+                <p class="note">I prefer building things over talking about them.</p>
             </div>
-
-            <!-- Bottom: Contact Info -->
-            <div class="contact-bar">
-                <div class="logo-signature">
-                    <svg viewBox="0 0 100 40" class="logo-svg">
-                        <text x="5" y="30" font-family="Bebas Neue" font-size="28" fill="#fff">VISHAL</text>
-                        <text x="5" y="38" font-family="Inter" font-size="8" fill="#00E5FF">CYBERSECURITY</text>
-                    </svg>
-                </div>
-                <div class="contact-links">
-                    <a href="mailto:vishald.workspace@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        vishald.workspace@gmail.com
-                    </a>
-                    <span class="divider">•</span>
-                    <a href="https://github.com/cosmic-striker" target="_blank" class="contact-item">
-                        <i class="fab fa-github"></i>
-                        github.com/cosmic-striker
-                    </a>
-                    <span class="divider">•</span>
-                    <a href="https://www.linkedin.com/in/vishald07/" target="_blank" class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        linkedin.com/vishald07
-                    </a>
-                </div>
-                <div class="cursor-icon">
-                    <i class="fas fa-hand-pointer"></i>
-                </div>
+            <div class="hero-image">
+                <img src="vishal.png" alt="Vishal" />
             </div>
         </section>
 
-        <!-- Navigation with Projects Link -->
-        <nav class="floating-nav">
-            <a href="projects.html" class="nav-btn">
-                <i class="fas fa-folder-open"></i>
-                <span>View Projects</span>
-            </a>
-            <a href="#contact" class="nav-btn">
-                <i class="fas fa-envelope"></i>
-                <span>Contact</span>
-            </a>
-        </nav>
-    </div>
+        <section id="about">
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
+            <p class="section-copy">I am a practical, hands-on builder who learns best by doing. I like working through real problems, testing ideas directly, and understanding how systems behave under pressure.</p>
+            <p class="section-copy" style="margin-top: 16px;">My focus is cybersecurity, system architecture, and real-world problem solving. I value clarity over noise, prefer direct thinking, and work well independently when there is a concrete problem to solve.</p>
+        </section>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-        <div class="mouse">
-            <div class="wheel"></div>
-        </div>
-        <p>Scroll to explore</p>
-    </div>
+        <section id="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <p class="section-copy">A few systems and security projects that reflect how I like to learn and build.</p>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="project-grid">
+                <article class="card">
+                    <h3 class="project-title">Fairy Flames</h3>
+                    <p class="project-text">Real-time traffic monitoring and intrusion detection system designed to spot suspicious activity early.</p>
+                    <div class="meta">
+                        <span class="chip">Python</span>
+                        <span class="chip">Networking</span>
+                        <span class="chip">Detection Logic</span>
+                    </div>
+                    <p class="project-text"><strong>Problem solved:</strong> Helps surface unusual traffic patterns before they become a larger security issue.</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="project-title">ExploitX</h3>
+                    <p class="project-text">Student-led CTF initiative built around collaborative learning, hands-on offense, and practical security practice.</p>
+                    <div class="meta">
+                        <span class="chip">CTF Design</span>
+                        <span class="chip">Security Labs</span>
+                        <span class="chip">Team Learning</span>
+                    </div>
+                    <p class="project-text"><strong>Problem solved:</strong> Creates a structured way for students to sharpen offensive security skills through real exercises.</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="project-title">Home Server Lab</h3>
+                    <p class="project-text">A personal lab for NAS, Docker, monitoring, and networking experiments built to understand how services run in practice.</p>
+                    <div class="meta">
+                        <span class="chip">Linux</span>
+                        <span class="chip">Docker</span>
+                        <span class="chip">Monitoring</span>
+                    </div>
+                    <p class="project-text"><strong>Problem solved:</strong> Provides a safe environment to test infrastructure ideas, automate services, and learn system administration.</p>
+                </article>
+
+                <article class="card">
+                    <h3 class="project-title">Custom LLM Project</h3>
+                    <p class="project-text">A language model project built with PyTorch and CUDA, kept close to the metal without external frameworks.</p>
+                    <div class="meta">
+                        <span class="chip">PyTorch</span>
+                        <span class="chip">CUDA</span>
+                        <span class="chip">Model Training</span>
+                    </div>
+                    <p class="project-text"><strong>Problem solved:</strong> Demonstrates a deeper understanding of model internals, performance, and low-level implementation choices.</p>
+                </article>
+            </div>
+            <div class="view-more">
+                <a href="#" class="view-more-link">View more projects →</a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills" aria-label="Skills list">
+                <div class="skill">Cybersecurity fundamentals</div>
+                <div class="skill">Networking</div>
+                <div class="skill">System design</div>
+                <div class="skill">Docker &amp; Linux</div>
+                <div class="skill">Python / PyTorch</div>
+                <div class="skill">Problem-solving mindset</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-list">
+                <div>Email: <a href="mailto:vishald.cs2023@citchennai.net">vishald.cs2023@citchennai.net</a></div>
+                <div>GitHub: <a href="https://github.com/cosmic-striker" target="_blank" rel="noreferrer">github.com/cosmic-striker</a></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                Thank you for visiting my portfolio. I’m always open to connecting with like-minded individuals, discussing projects, or exploring opportunities.</p>
+            <p>
+                Feel free to reach out!
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const targetId = link.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
 </body>
 </html>
